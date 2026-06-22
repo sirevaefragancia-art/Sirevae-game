@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Venom Game | SIREVAE</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="game-card">
+      <div class="topbar">
+        <div>
+          <p class="eyebrow">SIREVAE presenta</p>
+          <h1>VENOM GAME</h1>
+        </div>
+        <div class="counter" id="score">0 / 5</div>
+      </div>
+
+      <canvas id="game"></canvas>
+
+      <div class="hud">
+        <p id="message">Mové al esqueleto y juntá 5 perfumes Venom.</p>
+        <button id="startBtn">Jugar</button>
+        <button id="shopBtn" class="hidden">Ver Venom en la tienda</button>
+      </div>
+
+      <div class="controls" id="controls">
+        <button data-dir="up">▲</button>
+        <div>
+          <button data-dir="left">◀</button>
+          <button data-dir="down">▼</button>
+          <button data-dir="right">▶</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
