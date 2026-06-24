@@ -206,7 +206,11 @@ function drawSkeleton() {
   ctx.fillStyle = "#0a0a0d"; ctx.fillRect(-13, 25, 10, 30); ctx.fillRect(3, 25, 10, 30);
   ctx.fillStyle = "#f5f5f5"; ctx.fillRect(-16, 55, 14, 7); ctx.fillRect(2, 55, 14, 7);
   ctx.fillStyle = "#111"; ctx.beginPath(); ctx.arc(27, 21, 5, 0, Math.PI*2); ctx.fill();
-  ctx.restore();
+ ctx.fillStyle = "red";
+ctx.beginPath();
+ctx.arc(0, 0, 20, 0, Math.PI * 2);
+ctx.fill();
+ ctx.restore();
 }
 
 function updatePlayer() {
