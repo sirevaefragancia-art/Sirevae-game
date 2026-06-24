@@ -14,7 +14,7 @@ perfumeImg.src = "assets/perfume.png";
 
 let W, H, gameStarted = false, won = false, score = 0, messageTimer = 0;
 const keys = {};
-const player = { x: 520, y: 420, r: 18, speed: 3.2, glow: 0 };
+const player = { x: 520, y: 520, r: 18, speed: 4.2, glow: 0 };
 
 const world = { width: 1800, height: 1300 };
 const camera = { x: 0, y: 0 };
