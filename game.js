@@ -269,7 +269,7 @@ function loop() {
   drawWorld();
   ctx.save(); ctx.translate(-camera.x, -camera.y);
   drawCars(); drawPerfumes(); drawNPCs();
-  if (gameStarted && !winScreen.classList.contains("active")) { updatePlayer(); updateCollectibles(); updateZone(); }
+  if (gameStarted && !won) { updatePlayer(); updateCollectibles(); updateZone(); }
   drawSkeleton();
   ctx.restore();
   if (messageTimer > 0) messageTimer--; else messageBox.classList.remove("show");
