@@ -211,6 +211,7 @@ function drawSkeleton() {
 
 function updatePlayer() {
   let dx = 0, dy = 0;
+console.log("Moviendo jugador");
   if (keys.w || keys.arrowup) dy -= 1;
   if (keys.s || keys.arrowdown) dy += 1;
   if (keys.a || keys.arrowleft) dx -= 1;
