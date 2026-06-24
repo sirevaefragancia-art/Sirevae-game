@@ -67,10 +67,24 @@ window.addEventListener("keyup", e => keys[e.key.toLowerCase()] = false);
 
 document.querySelectorAll("#mobileControls button").forEach(btn => {
   const key = btn.dataset.key;
-  btn.addEventListener("touchstart", e => { e.preventDefault(); keys[key] = true; });
-  btn.addEventListener("touchend", e => { e.preventDefault(); keys[key] = false; });
-  btn.addEventListener("mousedown", () => keys[key] = true);
-  btn.addEventListener("mouseup", () => keys[key] = false);
+
+  const press = (e) => {
+    e.preventDefault();
+    keys[key] = true;
+  };
+
+  const release = (e) => {
+    e.preventDefault();
+    keys[key] = false;
+  };
+
+  btn.addEventListener("touchstart", press, { passive: false });
+  btn.addEventListener("touchend", release, { passive: false });
+  btn.addEventListener("touchcancel", release, { passive: false });
+
+  btn.addEventListener("pointerdown", press);
+  btn.addEventListener("pointerup", release);
+  btn.addEventListener("pointerleave", release);
 });
 
 startBtn.onclick = () => { startScreen.classList.remove("active"); gameStarted = true; showMessage("Recolectá los 10 perfumes Venom."); };
