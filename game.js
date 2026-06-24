@@ -246,7 +246,7 @@ function win() {
   showMessage("VENOM DESBLOQUEADO: modo presencia activado.");
 
   setTimeout(() => {
-    window.location.href = https://14diuj-yr.myshopify.com/;
+    window.location.href = "https://14diuj-yr.myshopify.com/";
   }, 2000);
 }
 
