@@ -29,3 +29,15 @@ small { display: block; color: rgba(255,255,255,.54); margin-top: 12px; }
 #mobileControls button {
   touch-action: none;
 }
+#mobileControls {
+  position: fixed;
+  left: 25px;
+  bottom: 55px;
+  z-index: 99999;
+  pointer-events: auto;
+}
+
+#mobileControls button {
+  touch-action: none;
+  pointer-events: auto;
+}
