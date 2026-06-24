@@ -266,14 +266,32 @@ function win() {
 }
 
 function loop() {
+  if (gameStarted && !won) {
+    updatePlayer();
+    updateCollectibles();
+    updateZone();
+  }
+
   updateCamera();
   drawWorld();
-  ctx.save(); ctx.translate(-camera.x, -camera.y);
-  drawCars(); drawPerfumes(); drawNPCs();
-  if (gameStarted && !won) { updatePlayer(); updateCollectibles(); updateZone(); }
+
+  ctx.save();
+  ctx.translate(-camera.x, -camera.y);
+
+  drawCars();
+  drawPerfumes();
+  drawNPCs();
   drawSkeleton();
+
   ctx.restore();
-  if (messageTimer > 0) messageTimer--; else messageBox.classList.remove("show");
+
+  if (messageTimer > 0) {
+    messageTimer--;
+  } else {
+    messageBox.classList.remove("show");
+  }
+
   requestAnimationFrame(loop);
 }
+
 loop();
