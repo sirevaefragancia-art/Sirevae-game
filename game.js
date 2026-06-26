@@ -1,6 +1,21 @@
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
+const startBtn = document.getElementById("startBtn");
+const music = document.getElementById("music");
+const pickupSound = document.getElementById("pickupSound");
+const hitSound = document.getElementById("hitSound");
 
+let gameStarted = false;
+
+startBtn.addEventListener("click", () => {
+  gameStarted = true;
+  startBtn.style.display = "none";
+
+  if (music) {
+    music.volume = 0.4;
+    music.play().catch(() => {});
+  }
+});
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
