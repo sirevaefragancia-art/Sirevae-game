@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Venom City</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+  <script src="game.js"></script>
+</body>
+</html>ylesheet" href="style.css" />
+</head>
+<body>
+  <div id="gameWrapper">
+    <canvas id="game"></canvas>
+
+    <section id="startScreen" class="screen active">
+      <div class="panel">
+        <p class="eyebrow">SIREVAE PRESENTA</p>
+        <h1>VENOM CITY</h1>
+        <p class="subtitle">Recolectá los 10 perfumes Venom en la ciudad retro y desbloqueá tu mejor versión.</p>
+        <button id="startBtn">JUGAR AHORA</button>
+        <small>PC: WASD / flechas · Celular: joystick táctil</small>
+      </div>
+    </section>
+
+    <section id="winScreen" class="screen">
+      <div class="panel win">
+        <p class="eyebrow">VENOM DESBLOQUEADO</p>
+        <h2>MODO PRESENCIA ACTIVADO</h2>
+        <p>Juntaste todos los perfumes. Ahora reclamá tu fragancia.</p>
+        <a id="shopBtn" href="https://14diuj-yr.myshopify.com/" target="_blank" rel="noopener">VER FRAGANCIA</a>
+        <button id="restartBtn">JUGAR DE NUEVO</button>
+      </div>
+    </section>
+
+    <div id="hud">
+      <div class="hudCard brand"><strong>VENOM CITY</strong><span id="zoneName">Centro</span></div>
+      <div class="hudCard">Perfumes <span id="score">0</span>/10</div>
+      <div class="hudCard">Presencia <span id="presence">0</span>%</div>
+    </div>
+
+    <div id="messageBox">Encontrá los 10 Venom.</div>
+
+    <div id="mobileControls">
+      <button data-key="w">▲</button>
+      <div>
+        <button data-key="a">◀</button>
+        <button data-key="s">▼</button>
+        <button data-key="d">▶</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
