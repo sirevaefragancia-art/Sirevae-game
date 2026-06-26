@@ -7,51 +7,34 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="gameWrapper">
-    <canvas id="game"></canvas>
 
-    <section id="startScreen" class="screen active">
-      <div class="panel">
-        <p class="eyebrow">SIREVAE PRESENTA</p>
-        <h1>VENOM CITY</h1>
-        <p class="subtitle">Recolectá los 10 perfumes Venom en la ciudad retro y desbloqueá tu mejor versión.</p>
-        <button id="startBtn">JUGAR AHORA</button>
-        <small>PC: WASD / flechas · Celular: joystick táctil</small>
-      </div>
-    </section>
+<div id="game">
+  <div id="player">💀</div>
 
-    <section id="winScreen" class="screen">
-      <div class="panel win">
-        <p class="eyebrow">VENOM DESBLOQUEADO</p>
-        <h2>MODO PRESENCIA ACTIVADO</h2>
-        <p>Juntaste todos los perfumes. Ahora reclamá tu fragancia.</p>
-        <a id="shopBtn" href="https://14diuj-yr.myshopify.com/" target="_blank" rel="noopener">VER FRAGANCIA</a>
-        <button id="restartBtn">JUGAR DE NUEVO</button>
-      </div>
-    </section>
+  <div class="paper" data-text="¿Alguna vez sentiste que alguien ni siquiera notó que estabas ahí?">📄</div>
+  <div class="paper" data-text="Quizás no era tu apariencia. Quizás nunca lograste dejar una impresión.">📄</div>
+  <div class="paper" data-text="Las personas olvidan una cara, pero recuerdan cómo alguien las hizo sentir.">📄</div>
+  <div class="paper" data-text="El aroma puede hablar por vos antes de decir una palabra.">📄</div>
+  <div class="paper" data-text="Un buen perfume no cambia quién sos. Hace que tu presencia sea imposible de ignorar.">📄</div>
+  <div class="paper" data-text="Ahora entendés por qué algunas personas son imposibles de olvidar.">📄</div>
 
-    <div id="hud">
-      <div class="hudCard brand"><strong>VENOM CITY</strong><span id="zoneName">Centro</span></div>
-      <div class="hudCard">Perfumes <span id="score">0</span>/10</div>
-      <div class="hudCard">Presencia <span id="presence">0</span>%</div>
-    </div>
-
-    <div id="messageBox">Encontrá los 10 Venom.</div>
-
-    <div id="mobileControls">
-      <button data-key="w">▲</button>
-      <div>
-        <button data-key="a">◀</button>
-        <button data-key="s">▼</button>
-        <button data-key="d">▶</button>
-      </div>
-    </div>
+  <div id="finish">
+    <h1>VENOM</h1>
+    <p>Descubrí el aroma que deja huella.</p>
+    <a href="https://14diuj-yr.myshopify.com" target="_blank">IR A LA TIENDA</a>
   </div>
+</div>
 
-  <audio id="music" src="assets/audio/musica.mp3" loop></audio>
-  <audio id="pickupSound" src="assets/audio/perfume.wav"></audio>
-  <audio id="hitSound" src="assets/audio/muerte.wav"></audio>
+<div id="dialog">
+  <p id="dialogText"></p>
+  <button id="closeDialog">Seguir caminando</button>
+</div>
 
-  <script src="game.js"></script>
+<div id="controls">
+  <button id="left">⬅️</button>
+  <button id="right">➡️</button>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
