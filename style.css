@@ -1,131 +1,141 @@
 * {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
   margin: 0;
-  background: #050505;
   overflow: hidden;
-  touch-action: none;
+  background: #050505;
+  font-family: Arial, sans-serif;
 }
 
-#gameWrapper {
-  position: fixed;
-  inset: 0;
-  background: #05070b;
+#game {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(#111827, #020617);
+  overflow: hidden;
 }
 
-canvas {
+#game::before {
+  content: "";
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
+  bottom: 0;
+  width: 3000px;
+  height: 35%;
+  background: linear-gradient(#1f2937, #030712);
+  border-top: 3px solid #22c55e;
 }
 
-.screen {
+#player {
+  position: absolute;
+  bottom: 28%;
+  left: 80px;
+  font-size: 55px;
+  z-index: 5;
+  transition: transform 0.1s;
+}
+
+.paper {
+  position: absolute;
+  bottom: 33%;
+  font-size: 38px;
+  z-index: 4;
+  animation: float 1.5s infinite alternate;
+}
+
+.paper:nth-of-type(1) { left: 320px; }
+.paper:nth-of-type(2) { left: 650px; }
+.paper:nth-of-type(3) { left: 980px; }
+.paper:nth-of-type(4) { left: 1310px; }
+.paper:nth-of-type(5) { left: 1640px; }
+.paper:nth-of-type(6) { left: 1970px; }
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+
+#dialog {
   position: fixed;
   inset: 0;
+  background: rgba(0,0,0,0.80);
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 50;
-  background: rgba(0, 0, 0, 0.92);
+  z-index: 20;
+  padding: 20px;
 }
 
-.screen.active {
-  display: flex;
-}
-
-.panel {
-  width: min(92vw, 520px);
-  padding: 32px 24px;
-  border-radius: 24px;
-  background: rgba(0, 0, 0, 0.85);
-  text-align: center;
+#dialog p {
+  background: #020617;
   color: white;
+  border: 2px solid #22c55e;
+  padding: 25px;
+  border-radius: 18px;
+  max-width: 420px;
+  font-size: 22px;
+  text-align: center;
+  box-shadow: 0 0 25px #22c55e66;
 }
 
-.eyebrow {
-  color: #5fd8ff;
-  font-weight: 800;
-  letter-spacing: 4px;
+#closeDialog {
+  position: absolute;
+  bottom: 80px;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 12px;
+  background: #22c55e;
+  color: black;
+  font-weight: bold;
+  font-size: 17px;
 }
 
-.panel h1 {
-  font-size: 46px;
-}
-
-button,
-#shopBtn {
-  border: 0;
-  border-radius: 999px;
-  padding: 15px 26px;
-  background: white;
-  color: #05070b;
-  font-weight: 900;
-  font-size: 16px;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  margin: 6px;
-}
-
-#hud {
+#controls {
   position: fixed;
-  top: 12px;
-  left: 14px;
-  right: 14px;
+  bottom: 20px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  gap: 8px;
-  z-index: 20;
-  color: white;
+  padding: 0 35px;
+  z-index: 10;
 }
 
-.hudCard {
-  background: rgba(0, 0, 0, 0.78);
-  border-radius: 18px;
-  padding: 12px 16px;
-  font-size: 16px;
-}
-
-#messageBox {
-  position: fixed;
-  left: 50%;
-  bottom: 145px;
-  transform: translateX(-50%);
-  z-index: 25;
-  background: rgba(0, 0, 0, 0.82);
-  color: white;
-  border-radius: 22px;
-  padding: 14px 22px;
-  text-align: center;
-  font-size: 18px;
-}
-
-#mobileControls {
-  position: fixed;
-  left: 20px;
-  bottom: 24px;
-  z-index: 40;
-  text-align: center;
-}
-
-#mobileControls button {
-  width: 72px;
-  height: 72px;
-  margin: 5px;
-  padding: 0;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.17);
-  color: white;
+#controls button {
   font-size: 30px;
+  padding: 15px 22px;
+  border-radius: 50%;
+  border: none;
+  background: #22c55e;
 }
 
-@media (min-width: 900px) {
-  #mobileControls {
-    display: none;
-  }
+#finish {
+  position: absolute;
+  left: 2300px;
+  bottom: 31%;
+  width: 280px;
+  padding: 25px;
+  background: #020617;
+  border: 2px solid #22c55e;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 30px #22c55e88;
+}
+
+#finish h1 {
+  color: #22c55e;
+  font-size: 42px;
+  margin: 0;
+}
+
+#finish a {
+  display: block;
+  margin-top: 15px;
+  padding: 14px;
+  border-radius: 12px;
+  background: #22c55e;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
 }
